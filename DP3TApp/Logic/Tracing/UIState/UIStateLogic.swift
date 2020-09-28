@@ -237,7 +237,10 @@ class UIStateLogic {
             // in case the infection state is overwritten, we need to
             // add at least one report
             if let os = manager.overwrittenInfectionState, os == .exposed {
-                newState.reportsDetail.reports = [UIStateModel.ReportsDetail.NSReportModel(identifier: Self.randIdentifier1, timestamp: Self.randDate1), UIStateModel.ReportsDetail.NSReportModel(identifier: Self.randIdentifier2, timestamp: Self.randDate2)].sorted(by: { (a, b) -> Bool in
+                newState.reportsDetail.reports = [
+//                    UIStateModel.ReportsDetail.NSReportModel(identifier: Self.randIdentifier1, timestamp: Self.randDate1),
+                    UIStateModel.ReportsDetail.NSReportModel(identifier: Self.randIdentifier2, timestamp: Self.randDate2)
+                ].sorted(by: { (a, b) -> Bool in
                     a.timestamp < b.timestamp
                 })
                 newState.shouldStartAtReportsDetail = true
